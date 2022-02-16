@@ -63,14 +63,13 @@ function generatePassword() {
   var passwordOption = "";
   var randomcharacter = [];
   var passwordLength = window.prompt("Choose between 8-128 characters");
-  //This while loop will repeat itself until user enters a number between 8 and 128
   while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     var passwordLength = window.prompt(
       "Please enter a number between 8 and 128"
     );
 
     while (randomcharacter.length === 0) {
-      //asking what the user wants to generate a proper password 
+     
       if (window.confirm("do you want lowercase")) {
         randomcharacter = randomcharacter.concat(lowercase);
       }
@@ -88,11 +87,11 @@ function generatePassword() {
     }
 //for loop counting and adding
     for (var i = 0; i < passwordLength; i++) {
-      finalPassword +=
+      passwordOption +=
         randomCharacters[Math.floor(Math.random() * randomCharacters.length)];
     }
     //
-    return finalPassword;
+    return passwordOption;
   }
 //make a password 
   function writePassword() {
